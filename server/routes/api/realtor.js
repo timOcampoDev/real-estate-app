@@ -9,7 +9,6 @@ const unirest = require("unirest");
 
 router.get( '/test' , (req, res)=> res.send( 'realtor WORKS' ));
 
-
 /**
  * @route   GET api/query-listings
  * @desc    Gets query result for property listings
