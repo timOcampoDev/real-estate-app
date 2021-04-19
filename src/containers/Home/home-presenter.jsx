@@ -1,7 +1,7 @@
 import React from 'react';
 import MastheadPresenter from "./MastHead";
 import {useStyles} from "../../styles/Theme";
-import Container from '@material-ui/core/Container';
+import Box from '@material-ui/core/Box';
 import SearchBar from '../../components/SearchBarComponent';
 
 const HomePresenter = ()=>{
@@ -11,7 +11,7 @@ const HomePresenter = ()=>{
         <div className={'home-component'}>
             <MastheadPresenter/>
 
-            <Container classes={{root: classes.home}}>
+            <Box classes={{root: classes.home}}>
                 <div>
                     <h1>
                         1% listing fee<br/>when you buy + sell.
@@ -32,7 +32,7 @@ const HomePresenter = ()=>{
                 <div>
                     feed goes in here
                 </div>
-            </Container>
+            </Box>
         </div>
     )
 }

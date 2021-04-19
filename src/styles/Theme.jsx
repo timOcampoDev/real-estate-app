@@ -7,22 +7,21 @@ export const THEME = createMuiTheme({
     body: {
         text: 'cyan',
     },
-
     header: {
         background: 'none',
-        color: '',
     },
     masthead: {
         position: 'absolute',
-        background: '#1b3a3a8c',
-        height: '45vh',
+        background: `url("https://i.ibb.co/Vv6WFyC/qik-Seek-landing-hero.jpg")`,
+        backgroundRepeat: 'no-repeat',
+        height: '65vh',
+        width: '100vh'
     },
-
     home:{
+        color: 'aliceblue',
         paddingTop: '5rem',
         paddingRight: '2rem',
     }
-
 });
 
 /**
@@ -41,9 +40,11 @@ export const useStyles = makeStyles((theme) => {
             position: masthead.position,
             background: masthead.background,
             height: masthead.height,
+            backgroundRepeat: masthead.backgroundRepeat
         },
 
         home: {
+            color: home.color,
             paddingTop: home.paddingTop,
             paddingRight : home.paddingRight
         }
