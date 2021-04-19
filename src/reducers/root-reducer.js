@@ -1,6 +1,5 @@
 import {createSlice, combineReducers} from "@reduxjs/toolkit";
 
-
 export const listingsState = {
     data: {
         queryResults: []
@@ -12,7 +11,6 @@ export const listingsSlice = createSlice({
     initialState : listingsState,
     reducers:{
         handleGetListings : (state = listingsState, action)=>{
-            alert('fired')
             const { data } = action.payload
             const { queryResults } = data;
 
