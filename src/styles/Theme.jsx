@@ -1,4 +1,4 @@
-import {createMuiTheme, makeStyles} from '@material-ui/core/styles';
+import { createMuiTheme, makeStyles} from '@material-ui/core/styles';
 
 /**
  *  Defines the style theme for each component
@@ -28,7 +28,6 @@ export const THEME = createMuiTheme({
 /**
  * Export the themes created above
  */
-
 export const useStyles = makeStyles((theme) => {
     const {body ,header , masthead, home} = theme
 
