@@ -1,9 +1,10 @@
 import { call, put, takeEvery, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
 
-export function* fetchListings( action ) {
+
+export function* fetchListingsSaga(action ) {
     const { query } = action.payload
-    const requestUrl = `/api/query-listings/${query}`
+    const requestUrl = `/api/realtor/query-listings/${query}`
 
     console.log(query, 'what is action?')
     try{

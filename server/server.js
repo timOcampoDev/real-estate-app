@@ -1,11 +1,11 @@
 "use strict"
 require('dotenv').config();
-const express = require('express'),
+const express = require('express');
+const cors = require('cors'),
 app = express(),
 PORT = process.env.PORT || 5000;
 
 app.get('/' , (req, res)=> res.send('API WORKS'));
-
 /**
  * Define Routes
  */
