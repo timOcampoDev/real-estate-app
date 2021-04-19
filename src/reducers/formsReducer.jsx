@@ -14,14 +14,22 @@ export const formsSlice = createSlice({
                 ...state,
                 [name]: value
             }
-        }
+        },
+
+        handleSearchHomes : (state= formsReducerState, action)=>{
+            const data = {...state}
+            console.log(data.searchBarField, '***&&&*')
+            return{
+                ...state
+            }
+        },
     }
 })
 
 /**
  * ACTIONS
  */
-export const { handleSearchBarOnChange } = formsSlice.actions;
+export const { handleSearchBarOnChange , handleSearchHomes} = formsSlice.actions;
 
 /**
  * SELECTORS

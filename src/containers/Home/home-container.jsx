@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch , useSelector } from "react-redux";
 import HomePresenter from './home-presenter';
@@ -19,17 +19,21 @@ const HomeContainer = ()=>{
                 value: e.target.value,
             }
         })
-
     }
-
+    const handleSearchHomes = ( query )=>{
+        dispatch( {
+            type: 'forms/handleSearchHomes',
+            payload: {
+                query,
+            },
+        })
+    }
     return(
         <HomePresenter props={{
             searchBarField,
             handleSearchBarOnChange,
+            handleSearchHomes: ()=>handleSearchHomes( searchBarField ),
         }}/>
-    )
+    );
 }
-
-
-
 export default HomeContainer

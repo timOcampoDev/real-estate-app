@@ -6,7 +6,7 @@ import Container from '@material-ui/core/Container';
 import SearchBar from '../../components/SearchBarComponent';
 
 const HomePresenter = ({props})=>{
-    const {searchBarField, handleSearchBarOnChange} = props;
+    const {searchBarField, handleSearchBarOnChange, handleSearchHomes} = props;
 
     const classes = useStyles({})
     return(
@@ -23,7 +23,7 @@ const HomePresenter = ({props})=>{
                     <SearchBar
                         props={{
                             buttonText: 'Search Homes',
-                            onClick: ()=> alert('Logic'),
+                            onClick: handleSearchHomes,
                             id: 'home-search-bar',
                             type: 'search',
                             name: 'searchBarField',
@@ -44,6 +44,7 @@ HomePresenter.propTypes={
     props: PropTypes.shape({
         searchBarField: PropTypes.string,
         handleSearchBarOnChange: PropTypes.func.isRequired,
+        handleSearchHomes: PropTypes.func.isRequired,
     })
 }
 
