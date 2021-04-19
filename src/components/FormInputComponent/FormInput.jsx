@@ -1,16 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import TextField from "@material-ui/core/TextField";
+import Input from "@material-ui/core/Input";
 import { TextFieldInput } from "./styles";
 
-const FormInputComponent = (props)=>{
+const FormInputComponent = ({props})=>{
     const {type, id, name, value, onChange } = props
 
     return(
-        <TextField
+        <Input
             id={id}
+            name={name}
             className={TextFieldInput}
             type={type}
+            value={value}
+            onChange={onChange}
            />
     )
 }

@@ -1,27 +1,35 @@
 import React, {useEffect} from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch , useSelector } from "react-redux";
 import HomePresenter from './home-presenter';
-import { getListings } from "../../reducers/root-reducer";
+import { getListings } from "../../reducers/listings-reducer";
+import { getSearchBarField, handleSearchBarOnChange } from "../../reducers/formsReducer";
 
 const HomeContainer = ()=>{
     const dispatch = useDispatch();
     const listingState = useSelector(getListings)
+    const formState = useSelector(getSearchBarField)
+    const { searchBarField } = formState;
 
-    useEffect(()=>{
+    const handleSearchBarOnChange=( e )=>{
         dispatch({
-            type: 'listings/handleGetListings',
-            payload: {
-                data: {
-                    queryResults : ['wuTang']
-                }
+            type: 'forms/handleSearchBarOnChange',
+            payload:{
+                name: e.target.name,
+                value: e.target.value,
             }
         })
-    }, [])
 
-    console.log(listingState, 'what is listingState?')
+    }
+
     return(
-        <HomePresenter/>
+        <HomePresenter props={{
+            searchBarField,
+            handleSearchBarOnChange,
+        }}/>
     )
 }
+
+
 
 export default HomeContainer

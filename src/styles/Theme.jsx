@@ -19,7 +19,8 @@ export const THEME = createMuiTheme({
     },
     home:{
         color: 'aliceblue',
-        paddingTop: '5rem',
+        width: '80%',
+        paddingTop: '10%',
         paddingRight: '2rem',
     }
 });
@@ -45,8 +46,9 @@ export const useStyles = makeStyles((theme) => {
 
         home: {
             color: home.color,
+            width: home.width,
             paddingTop: home.paddingTop,
-            paddingRight : home.paddingRight
+
         }
     })
 });
