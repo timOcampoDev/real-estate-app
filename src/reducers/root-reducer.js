@@ -2,7 +2,9 @@ import {createSlice, combineReducers} from "@reduxjs/toolkit";
 
 
 export const listingsState = {
-    counter: 10
+    data: {
+        queryResults: []
+    }
 };
 
 export const listingsSlice = createSlice({
@@ -10,9 +12,16 @@ export const listingsSlice = createSlice({
     initialState : listingsState,
     reducers:{
         handleGetListings : (state = listingsState, action)=>{
-            console.log('i fired')
+            alert('fired')
+            const { data } = action.payload
+            const { queryResults } = data;
+
             return{
-                ...state
+                ...state,
+                data: {
+                    ...state.data,
+                    queryResults : queryResults,
+                }
             }
         }
     }
