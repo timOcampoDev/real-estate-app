@@ -4,7 +4,7 @@ import FormInputComponent from '../../components/FormInputComponent';
 import ButtonComponent from "../../components/ButtonComponent";
 
 const SearchbarPresenter = ({ props })=>{
-    const { type, id, name, value, onChange , buttonText, onClick, } = props;
+    const { type, id, name, value, onChange , buttonText, onClick } = props;
 
     return(
         <div className={'search-bar-presenter'} >
