@@ -17,7 +17,9 @@ router.get( '/test' , (req, res)=> res.send( 'realtor WORKS' ));
 
 router.get( '/query-listings/:query', (req, frontEnd)=>{
     //TODO : Uncomment when ready to make query api calls.
+
     const realtor = "https://realtor.p.rapidapi.com/locations/auto-complete"
+
     const submittedQuery = req.params.query
     const request = unirest("GET", realtor),
         HOST = process.env.HOST_NAME_REALTOR,

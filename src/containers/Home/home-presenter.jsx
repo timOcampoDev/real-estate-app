@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import MastheadPresenter from "./MastHead";
 import {useStyles} from "../../styles/Theme";
 import Container from '@material-ui/core/Container';
-import SearchBar from '../../components/SearchBarComponent';
+import SearchBar from '../SearchBarComponent';
 
 const HomePresenter = ({props})=>{
     const {searchBarField, handleSearchBarOnChange, handleSearchHomes} = props;
