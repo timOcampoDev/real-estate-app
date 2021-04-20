@@ -10,6 +10,9 @@ export function* fetchListingsSaga(action ) {
     try{
         const response = yield call( axios.get, requestUrl )
         console.log('this is the response in saga' , response)
+        if(response){
+            console.log('the response back from server' , response)
+        }
 
     }catch (e) {
         console.log(e , 'there was an error')

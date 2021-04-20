@@ -1,6 +1,7 @@
 const express = require( 'express' );
 const router = express.Router();
 const unirest = require("unirest");
+const axios = require("axios");
 
 /**
  * @route   GET api/realtor
@@ -14,12 +15,11 @@ router.get( '/test' , (req, res)=> res.send( 'realtor WORKS' ));
  * @desc    Gets query result for property listings
  */
 
-router.get( '/query-listings/:query', (req, res)=>{
+router.get( '/query-listings/:query', (req, frontEnd)=>{
     //TODO : Uncomment when ready to make query api calls.
-    console.log( req.params.query  , 'what is req??')
+    const realtor = "https://realtor.p.rapidapi.com/locations/auto-complete"
     const submittedQuery = req.params.query
-
-    const request = unirest("GET", "https://realtor.p.rapidapi.com/locations/auto-complete"),
+    const request = unirest("GET", realtor),
         HOST = process.env.HOST_NAME_REALTOR,
         SECRET= process.env.SECRET_REALTOR;
 
@@ -35,8 +35,9 @@ router.get( '/query-listings/:query', (req, res)=>{
 
     request.end(function (res) {
         if (res.error) throw new Error(res.error);
-        console.log('WHAT IS THE REQUEST NOW', res.body);
+        return frontEnd.send(res.body)
     });
+
 });
 
 module.exports = router
