@@ -9,7 +9,8 @@ const SearchbarPresenter = ({ props })=>{
     return(
         <div className={'search-bar-presenter'} >
 
-            <FormInputComponent props={{ type, id, name, value, onChange}}/>
+            <FormInputComponent props={{ type, id, name, value, onChange}}
+            />
 
             <ButtonComponent
                 props={{

@@ -23,6 +23,11 @@ export const formsSlice = createSlice({
                 ...state
             }
         },
+
+
+        handleSelectAuoSuggest : (state= formsReducerState, action)=>{
+
+        }
     }
 })
 
