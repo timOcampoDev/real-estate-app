@@ -17,8 +17,10 @@ export const formsSlice = createSlice({
         },
 
         handleSearchHomes : (state= formsReducerState, action)=>{
-            const data = {...state}
-            console.log(data.searchBarField, '***&&&*')
+            const {query} = action.payload
+
+            console.log('what is the query?' , query)
+
             return{
                 ...state
             }
@@ -39,5 +41,6 @@ export const { handleSearchBarOnChange , handleSearchHomes} = formsSlice.actions
 /**
  * SELECTORS
  */
+export const getFormState = (state= formsReducerState )=>state.rootReducer.formsReducer;
 export const getSearchBarField = (state = formsReducerState)=> state.rootReducer.formsReducer
 
