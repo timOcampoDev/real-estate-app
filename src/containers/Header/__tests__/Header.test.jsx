@@ -1,6 +1,9 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import {Provider} from "react-redux";
+import store from "../../../store";
 import { MuiThemeProvider } from "@material-ui/core";
+import { useStyles } from "../../../styles/Theme";
+import {shallow , mount} from 'enzyme'
 import { THEME } from "../../../styles/Theme";
 import Header from "../Header";
 
@@ -9,17 +12,17 @@ import Header from "../Header";
  */
 
 describe('Header', ()=>{
-    const wrapper = ( props )=>{
-        return(
-            shallow(
-                <MuiThemeProvider theme={THEME}>
-                    <Header/>
-                </MuiThemeProvider>)
-        )
-    };
+
+    const wrapper = mount(
+        <Provider store={store}>
+            <MuiThemeProvider theme={THEME}>
+                <Header/>
+            </MuiThemeProvider>
+        </Provider>
+    )
 
     it('renders w/o crashing', ()=>{
-        expect(wrapper().length).toStrictEqual(1)
+        expect(wrapper.length).toStrictEqual(1)
     })
 
 })
