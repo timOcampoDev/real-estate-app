@@ -6,10 +6,11 @@ import { useStyles } from "../../styles/Theme";
 const Header = ()=>{
     const classes = useStyles({})
     return(
-        <AppBar
-            classes={{ root: classes.header }}
-            position="fixed"
-        />
+           <AppBar
+               id={'app-header'}
+               classes={{ root: classes.header }}
+               position="fixed"
+           />
     )
 };
 

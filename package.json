@@ -39,6 +39,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "jest": "npm run test -- --coverage --watchAll=false",
     "eject": "react-scripts eject",
     "dev": "concurrently \"npm run server\" \"npm run start\""
   },
